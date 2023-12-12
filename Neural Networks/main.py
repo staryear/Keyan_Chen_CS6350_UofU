@@ -187,8 +187,8 @@ if __name__ == '__main__':
     width = [5, 10, 25, 50, 100]
     print("initial random weights")
     for n in width:
-        nn = NeuralNetwork(n, n, X_train, False)
-        p_tr, p_te = nn.fit(train_data, X_train, Y_train, X_test, Y_test, 0.01, 20)
+        fnn = NeuralNetwork(n, n, X_train, False)
+        p_tr, p_te = fnn.fit(train_data, X_train, Y_train, X_test, Y_test, 0.01, 20)
         count = 0
         print("Number of width {}".format(n))
         train_error_rate = calculate_rate(p_tr, Y_train)
@@ -199,8 +199,8 @@ if __name__ == '__main__':
 
     print("initial zero weights")
     for n in width:
-        nn = NeuralNetwork(n, n, X_train, True)
-        p_tr, p_te = nn.fit(train_data, X_train, Y_train, X_test, Y_test, 0.01, 100)
+        fnn = NeuralNetwork(n, n, X_train, True)
+        p_tr, p_te = fnn.fit(train_data, X_train, Y_train, X_test, Y_test, 0.01, 100)
         count = 0
         print("Number of width {}".format(n))
         train_error_rate = calculate_rate(p_tr, Y_train)
